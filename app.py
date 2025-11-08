@@ -136,6 +136,9 @@ def main() -> None:
         print("🚨 Detected code hash changes over the scanned range.")
     else:
         print("🎯 No code hash change detected in the scanned samples.")
+    # ✅ New: Print how many code hash changes occurred
+    num_changes = len(changes) - 1 if len(changes) > 0 else 0
+    print(f"📈 Total Code Hash Changes Detected: {num_changes}")
 
     print(f"⏱️ Completed in {elapsed:.2f}s")
 
