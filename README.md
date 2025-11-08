@@ -56,10 +56,6 @@ Tight scan for a sensitive verifier contract:
 - **ZK relevance:** Stable code hashes improve **soundness** of zk proofs that assume fixed verification logic (e.g., rollup verifiers, bridge contracts, message inbox/outbox).
 - **Cross-chain audits:** Run this tool on L1 and L2 copies of the same address to detect divergent deployments across time windows.
 
-## Caveats
-- Bytecode **equality** implies bit-for-bit match; identical logic compiled with different settings may still hash differently.
-- Proxies: if scanning the **proxy address**, you’ll observe changes when the **implementation** behind the proxy changes (as expected). If you want to track the implementation directly, scan that address instead.
-
 ## Exit Codes
 - `0` → No code hash changes detected (within sampled blocks)  
 - `2` → Code hash changed at least once (or used for CI alerting)  
